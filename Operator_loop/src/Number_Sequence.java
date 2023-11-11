@@ -7,6 +7,38 @@ public class Number_Sequence {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter number of item : ");
         int num = s.nextInt();
+        int prev = s.nextInt();
+        int count = 2;
+        int currunt;
+        boolean isDec = true;
+        while (count<=num) {
+            currunt = s.nextInt();
+            count++;
+            if (prev == currunt) {
+                System.out.println(false);
+                return;
+            }
+            if (currunt<prev) {
+                if (isDec == false) {
+                    System.out.println(false);
+                    return;
+                }
+            } else {
+                if (isDec == true) {
+                    isDec = false;
+                }  
+            }
+            prev = currunt;
+        }
+        System.out.println(true);
+    }
+}
+
+// This approch was using binary search
+/* 
+ Scanner s = new Scanner(System.in);
+        System.out.println("Enter number of item : ");
+        int num = s.nextInt();
         int arr[] = new int[num];
         // Take Array Input
         for (int i = 0; i < arr.length; i++) {
@@ -22,5 +54,5 @@ public class Number_Sequence {
             }
         }
         System.out.println(bool);
-    }
-}
+*/
+ 
